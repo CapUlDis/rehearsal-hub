@@ -1,7 +1,7 @@
-package io.github.CapUlDis.rehearsal_hub.controllers;
+package io.github.CapUlDis.rehearsal_hub.room.controllers;
 
-import io.github.CapUlDis.rehearsal_hub.dto.RoomCreateDto;
-import io.github.CapUlDis.rehearsal_hub.dto.RoomRsDto;
+import io.github.CapUlDis.rehearsal_hub.room.dto.RoomCreateDto;
+import io.github.CapUlDis.rehearsal_hub.room.dto.RoomRsDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 

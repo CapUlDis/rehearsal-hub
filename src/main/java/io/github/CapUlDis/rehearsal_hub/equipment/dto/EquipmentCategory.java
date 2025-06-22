@@ -1,4 +1,4 @@
-package io.github.CapUlDis.rehearsal_hub.dto;
+package io.github.CapUlDis.rehearsal_hub.equipment.dto;
 
 public enum EquipmentCategory {
     GUITAR,
