@@ -1,4 +1,4 @@
-package io.github.CapUlDis.rehearsal_hub.room.controllers;
+package io.github.CapUlDis.rehearsal_hub.room.controller;
 
 import io.github.CapUlDis.rehearsal_hub.room.dto.RoomCreateDto;
 import io.github.CapUlDis.rehearsal_hub.room.dto.RoomRsDto;

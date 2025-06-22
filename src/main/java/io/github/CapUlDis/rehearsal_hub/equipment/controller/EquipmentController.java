@@ -1,22 +1,23 @@
-package io.github.CapUlDis.rehearsal_hub.equipment.controllers;
+package io.github.CapUlDis.rehearsal_hub.equipment.controller;
 
 import io.github.CapUlDis.rehearsal_hub.equipment.dto.EquipmentCreateDto;
 import io.github.CapUlDis.rehearsal_hub.equipment.dto.EquipmentRsDto;
+import io.github.CapUlDis.rehearsal_hub.equipment.service.EquipmentService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/equipment")
 public class EquipmentController {
+    private final EquipmentService service;
+
+    public EquipmentController(EquipmentService service) {
+        this.service = service;
+    }
+
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public EquipmentRsDto createEquipment(@RequestBody EquipmentCreateDto dto) {
-        return EquipmentRsDto.builder()
-                .id(UUID.randomUUID())
-                .name(dto.getName())
-                .type(dto.getType())
-                .build();
+        return service.createEquipment(dto);
     }
 }
