@@ -3,7 +3,6 @@ package io.github.CapUlDis.rehearsal_hub.equipment.repository;
 import io.github.CapUlDis.rehearsal_hub.equipment.dto.EquipmentCreateDto;
 import io.github.CapUlDis.rehearsal_hub.equipment.dto.EquipmentRsDto;
 import io.github.CapUlDis.rehearsal_hub.equipment.dto.EquipmentType;
-import io.github.CapUlDis.rehearsal_hub.equipment.dto.EquipmentsRsDto;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
