@@ -2,6 +2,7 @@ package io.github.CapUlDis.rehearsal_hub.room.controller;
 
 import io.github.CapUlDis.rehearsal_hub.room.dto.RoomCreateDto;
 import io.github.CapUlDis.rehearsal_hub.room.dto.RoomRsDto;
+import io.github.CapUlDis.rehearsal_hub.room.service.RoomService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,11 @@ import java.util.UUID;
 @RestController
 @RequestMapping("/api/room")
 public class RoomController {
+    private final RoomService service;
+
+    public RoomController(RoomService service) {
+        this.service = service;
+    }
 
     @GetMapping("/all")
     public String getALlRooms() {
@@ -19,11 +25,6 @@ public class RoomController {
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public RoomRsDto createRoom(@RequestBody RoomCreateDto dto) {
-        return RoomRsDto.builder()
-                .id(UUID.randomUUID())
-                .name(dto.getName())
-                .address(dto.getAddress())
-                .costPerHour(dto.getCostPerHour())
-                .build();
+        return service.createRoom(dto);
     }
 }

@@ -10,7 +10,7 @@ import java.util.UUID;
 @Setter
 @Getter
 public class RoomRsDto {
-    private UUID id;
+    private Integer id;
     private String name;
     private String address;
     private int costPerHour;
