@@ -10,25 +10,25 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api/equipment")
 public class EquipmentController {
-    private final EquipmentService service;
+    private final EquipmentService equipmentService;
 
-    public EquipmentController(EquipmentService service) {
-        this.service = service;
+    public EquipmentController(EquipmentService equipmentService) {
+        this.equipmentService = equipmentService;
     }
 
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public EquipmentRsDto createEquipment(@RequestBody EquipmentCreateDto dto) {
-        return service.createEquipment(dto);
+        return equipmentService.createEquipment(dto);
     }
 
     @DeleteMapping("/{id}")
     public void deleteEquipment(@PathVariable("id") String id) {
-        service.deleteEquipment(id);
+        equipmentService.deleteEquipment(id);
     }
 
     @GetMapping("")
     public EquipmentsRsDto getAllEquipments() {
-        return service.getAllEquipments();
+        return equipmentService.getAllEquipments();
     }
 }

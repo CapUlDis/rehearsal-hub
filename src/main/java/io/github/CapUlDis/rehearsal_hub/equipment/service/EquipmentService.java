@@ -8,23 +8,23 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class EquipmentService {
-    private final EquipmentRepository repository;
+    private final EquipmentRepository equipmentRepository;
 
-    public EquipmentService(EquipmentRepository repository) {
-        this.repository = repository;
+    public EquipmentService(EquipmentRepository equipmentRepository) {
+        this.equipmentRepository = equipmentRepository;
     }
 
     public EquipmentRsDto createEquipment(EquipmentCreateDto dto) {
-        return repository.save(dto);
+        return equipmentRepository.save(dto);
     }
 
     public void deleteEquipment(String id) {
-        repository.delete(id);
+        equipmentRepository.delete(id);
     }
 
     public EquipmentsRsDto getAllEquipments() {
         return EquipmentsRsDto.builder()
-                .items(repository.getAll())
+                .items(equipmentRepository.getAll())
                 .build();
     }
 }

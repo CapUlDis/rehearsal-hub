@@ -1,7 +1,5 @@
 package io.github.CapUlDis.rehearsal_hub.room.repository;
 
-import io.github.CapUlDis.rehearsal_hub.equipment.dto.EquipmentRsDto;
-import io.github.CapUlDis.rehearsal_hub.equipment.dto.EquipmentType;
 import io.github.CapUlDis.rehearsal_hub.room.dto.RoomCreateDto;
 import io.github.CapUlDis.rehearsal_hub.room.dto.RoomRsDto;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
@@ -31,5 +29,14 @@ public class RoomRepository {
                         .address(rs.getString("address"))
                         .costPerHour(rs.getInt("cost_per_hour"))
                         .build());
+    }
+
+    public void delete(String id) {
+        String sql = "DELETE FROM rooms WHERE id = :id";
+
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("id", Integer.parseInt(id));
+
+        jdbcTemplate.update(sql, params);
     }
 }

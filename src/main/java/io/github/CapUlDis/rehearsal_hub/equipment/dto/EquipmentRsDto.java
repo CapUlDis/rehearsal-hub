@@ -12,4 +12,5 @@ public class EquipmentRsDto {
     private EquipmentType type;
     private EquipmentCategory category;
     private String name;
+    private Integer roomId;
 }

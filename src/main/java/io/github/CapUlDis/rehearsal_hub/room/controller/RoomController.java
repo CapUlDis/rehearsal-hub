@@ -6,15 +6,13 @@ import io.github.CapUlDis.rehearsal_hub.room.service.RoomService;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.UUID;
-
 @RestController
 @RequestMapping("/api/room")
 public class RoomController {
-    private final RoomService service;
+    private final RoomService roomService;
 
-    public RoomController(RoomService service) {
-        this.service = service;
+    public RoomController(RoomService roomService) {
+        this.roomService = roomService;
     }
 
     @GetMapping("/all")
@@ -25,6 +23,11 @@ public class RoomController {
     @PostMapping("")
     @ResponseStatus(HttpStatus.CREATED)
     public RoomRsDto createRoom(@RequestBody RoomCreateDto dto) {
-        return service.createRoom(dto);
+        return roomService.createRoom(dto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteRoom(@PathVariable("id") String id) {
+        roomService.deleteRoom(id);
     }
 }

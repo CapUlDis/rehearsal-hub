@@ -10,4 +10,5 @@ import lombok.Setter;
 public class EquipmentCreateDto {
     private EquipmentType type;
     private String name;
+    private Integer roomId;
 }
