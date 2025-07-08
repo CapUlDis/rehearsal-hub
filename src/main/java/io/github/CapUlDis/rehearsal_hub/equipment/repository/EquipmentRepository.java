@@ -54,7 +54,6 @@ public class EquipmentRepository {
                 .id(rs.getInt("id"))
                 .name(rs.getString("name"))
                 .type(EquipmentType.valueOf(rs.getString("type")))
-                .category(EquipmentType.valueOf(rs.getString("type")).getCategory())
                 .roomId(rs.getInt("room_id"))
                 .build());
     }

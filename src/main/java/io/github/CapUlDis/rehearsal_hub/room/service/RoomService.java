@@ -32,4 +32,8 @@ public class RoomService {
     public void deleteRoom(String id) {
         roomRepository.delete(id);
     }
+
+    public RoomRsDto findRoomById(String id) {
+        return roomRepository.findById(id);
+    }
 }

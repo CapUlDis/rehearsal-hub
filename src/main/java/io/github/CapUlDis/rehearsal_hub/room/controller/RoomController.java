@@ -30,4 +30,9 @@ public class RoomController {
     public void deleteRoom(@PathVariable("id") String id) {
         roomService.deleteRoom(id);
     }
+
+    @GetMapping("/{id}")
+    public RoomRsDto getRoom(@PathVariable("id") String id) {
+        return roomService.findRoomById(id);
+    }
 }
